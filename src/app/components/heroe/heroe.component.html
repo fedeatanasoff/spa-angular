@@ -1,3 +1,20 @@
-<p>
-  heroe works!
-</p>
+<div class="container mt-4">
+  <!-- <h1>{{heroe.nombre}} <small>{{heroe.aparicion}}</small></h1> -->
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="heroe.img" class="img-fluid" [alt]="heroe.nombre">
+      <br><br>
+      <!-- <button (click)="regresarHeroes()" class="btn btn-block btn-outline-info">Regresar</button> -->
+      <a [routerLink]="['/heroes']" class="btn btn-outline-info btn-block">Regresar</a>
+    </div>
+    <div class="col-md-8">
+      <h3>{{heroe.nombre}} <small>({{heroe.aparicion}})</small></h3>
+      <hr>
+      <p>{{heroe.bio}}</p>
+      <div>
+        <img *ngIf="heroe.casa === 'DC'" class="img-logo" src="assets/img/dc-logo.jpg" alt="">
+        <img *ngIf="heroe.casa === 'Marvel'" class="img-logo" src="assets/img/marvel-logo.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
