@@ -1,0 +1,27 @@
+<div class="container animated fadeIn">
+  <h1 class="display-4 mt-4 mb-4">Buscando: <small>{{termino}}</small></h1>
+</div>
+
+
+
+<div class="container">
+  <div class="row animated fadeIn fast" *ngIf="heroes.length === 0">
+    <div class="col-md-12">
+      <div class="alert alert-info">
+        No se encontraron resultados para la busqueda: {{termino}}
+      </div>
+    </div>
+  </div>
+
+  <div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes, let i =index">
+      <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{heroe.nombre}}</h5>
+        <p class="card-text">{{heroe.bio}}</p>
+        <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+        <button (click)="verHeroe(i)" class="btn btn-outline-info btn-block">Ver mas...</button>
+      </div>
+    </div>
+  </div>
+</div>
